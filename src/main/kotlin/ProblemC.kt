@@ -1,30 +1,14 @@
-import java.io.ByteArrayOutputStream
-import java.io.InputStream
-import java.io.PrintStream
-
 class ProblemC {
 
     fun main() {
+        val countOfStudents = readInt()
+        val students = readIntArray(countOfStudents)
+        students.sort()
+        var countOfTasks = 0
 
-        val workDir = "problemC"
+        for (i in 0 until countOfStudents step 2)
+            countOfTasks += students[i + 1] - students[i]
 
-        lateinit var outputStream: ByteArrayOutputStream
-        lateinit var inputStream: InputStream
-
-        outputStream = ByteArrayOutputStream()
-        val ps = PrintStream(outputStream)
-        System.setOut(ps)
-        inputStream = this::class.java.getResource("$workDir/input.txt")!!.openStream()
-        System.setIn(inputStream)
-
-
-
-        val lines = readInt()
-
-        for (i in 1..lines) {
-
-        }
-
+        println(countOfTasks)
     }
-
 }
