@@ -4,10 +4,9 @@ class ProblemD {
         val countOfCashShifts = readInt()
 
         for (i in 1..countOfCashShifts) {
-            var profit = 0L
-            var profitNew = 0L
+            var profit: Long
+            var profitNew: Long
             val countOfCustomers = readInt()
-            //var array = readIntArray(countOfCustomers)
             var array = readLongArray(countOfCustomers)
             array.sortDescending()
             profit = array[countOfCustomers - 1].toLong()
