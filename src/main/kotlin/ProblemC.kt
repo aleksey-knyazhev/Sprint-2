@@ -1,8 +1,29 @@
+import java.io.ByteArrayOutputStream
+import java.io.InputStream
+import java.io.PrintStream
+
 class ProblemC {
 
     fun main() {
 
-        //ваша реализация в методе main
+        val workDir = "problemC"
+
+        lateinit var outputStream: ByteArrayOutputStream
+        lateinit var inputStream: InputStream
+
+        outputStream = ByteArrayOutputStream()
+        val ps = PrintStream(outputStream)
+        System.setOut(ps)
+        inputStream = this::class.java.getResource("$workDir/input.txt")!!.openStream()
+        System.setIn(inputStream)
+
+
+
+        val lines = readInt()
+
+        for (i in 1..lines) {
+
+        }
 
     }
 
