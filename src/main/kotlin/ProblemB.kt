@@ -1,7 +1,6 @@
 class ProblemB {
 
     fun main() {
-
         val lines = readInt()
 
         for (i in 1..lines) {

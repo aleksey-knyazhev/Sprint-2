@@ -1,7 +1,6 @@
 class ProblemA {
 
     fun main() {
-
         val lines = readInt()
 
         for (i in 1..lines) {
@@ -14,7 +13,5 @@ class ProblemA {
             }
             println(position)
         }
-
     }
-
 }

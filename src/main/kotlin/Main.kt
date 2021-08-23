@@ -16,6 +16,6 @@ fun main() {
 //    inputStream = this::class.java.getResource("$workDir/input.txt")!!.openStream()
 //    System.setIn(inputStream)
 
-    ProblemC().main()
+    ProblemD().main()
 
 }

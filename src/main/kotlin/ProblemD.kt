@@ -1,33 +1,26 @@
-import java.io.ByteArrayOutputStream
-import java.io.InputStream
-import java.io.PrintStream
-
 class ProblemD {
 
     fun main() {
+        val countOfCashShifts = readInt()
 
-        val workDir = "problemD"
-
-        lateinit var outputStream: ByteArrayOutputStream
-        lateinit var inputStream: InputStream
-
-        outputStream = ByteArrayOutputStream()
-        val ps = PrintStream(outputStream)
-        System.setOut(ps)
-        inputStream = this::class.java.getResource("$workDir/input.txt")!!.openStream()
-        System.setIn(inputStream)
-
-
-        val lines = readInt()
-
-        for (i in 1..lines) {
-            val array = readIntArray(2)
-            var string = ""
-
-
-            println(string)
-
+        for (i in 1..countOfCashShifts) {
+            var profit = 0L
+            var profitNew = 0L
+            val countOfCustomers = readInt()
+            //var array = readIntArray(countOfCustomers)
+            var array = readLongArray(countOfCustomers)
+            array.sortDescending()
+            profit = array[countOfCustomers - 1].toLong()
+            for (i in 0 until countOfCustomers) {
+                profitNew = array[i].toLong() * (i + 1)
+                if (profitNew < profit)
+                    break
+                profit = profitNew
+            }
+            println(profit)
         }
     }
+
+    private fun readLongArray(size:Int) = readStrings().run { LongArray(size) { get(it).toLong() } }
 
 }
