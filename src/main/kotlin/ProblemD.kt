@@ -9,9 +9,9 @@ class ProblemD {
             val countOfCustomers = readInt()
             var array = readLongArray(countOfCustomers)
             array.sortDescending()
-            profit = array[countOfCustomers - 1].toLong()
+            profit = array[countOfCustomers - 1]
             for (i in 0 until countOfCustomers) {
-                profitNew = array[i].toLong() * (i + 1)
+                profitNew = array[i] * (i + 1)
                 if (profitNew < profit)
                     break
                 profit = profitNew
