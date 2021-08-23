@@ -30,6 +30,7 @@ class ProblemB {
             for (item in vocabulary) {
                 if (countOfMaxFrequency == 0) {
 
+
                 }
             }
 
