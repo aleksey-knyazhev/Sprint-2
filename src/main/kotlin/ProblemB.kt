@@ -12,12 +12,10 @@ class ProblemB {
             val vocabulary = Array(vocabularySize) { (it + firstPosition).toChar().toString() }.joinToString("")
             var string = ""
 
-            // fullVocabularySetCounter - итератор случаев добавления полного словаря
-            for (fullVocabularySetCounter in 1..stringSize / vocabularySize) string += vocabulary
+            for (fullVocabularySetCounter in 1..stringSize / vocabularySize) string += vocabulary // fullVocabularySetCounter - итератор случаев добавления полного словаря
 
-            // singleLetterNonVocabularySetCounter - итератор символов неполной строки
             if (countOfMaxFrequencyLetters != 0)
-                for (singleLetterNonVocabularySetCounter in 0 until countOfMaxFrequencyLetters)
+                for (singleLetterNonVocabularySetCounter in 0 until countOfMaxFrequencyLetters) // singleLetterNonVocabularySetCounter - итератор символов неполной строки
                     string += vocabulary[singleLetterNonVocabularySetCounter].toString()
 
             println(string)
