@@ -8,26 +8,19 @@ class ProblemB {
             val stringSize = array[0]
             val vocabularySize = array[1]
             val countOfMaxFrequencyLetters = stringSize % vocabularySize
-            val vocabulary = getVocabulary(vocabularySize)
+            val firstPosition = 97 // ASCII-код символа 'a'
+            val vocabulary = Array(vocabularySize) { (it + firstPosition).toChar().toString() }.joinToString("")
             var string = ""
 
-            for (i in 1..stringSize / vocabularySize) {
-                string += vocabulary
-            }
-            if (countOfMaxFrequencyLetters != 0) {
-                for (i in 0 until countOfMaxFrequencyLetters) {
-                    string += vocabulary[i].toString()
-                }
-            }
+            // fullVocabularySetCounter - итератор случаев добавления полного словаря
+            for (fullVocabularySetCounter in 1..stringSize / vocabularySize) string += vocabulary
+
+            // singleLetterNonVocabularySetCounter - итератор символов неполной строки
+            if (countOfMaxFrequencyLetters != 0)
+                for (singleLetterNonVocabularySetCounter in 0 until countOfMaxFrequencyLetters)
+                    string += vocabulary[singleLetterNonVocabularySetCounter].toString()
+
             println(string)
         }
-    }
-
-    private fun getVocabulary(vocabularySize: Int): String {
-        val firstPosition = 97 // ASCII-код символа 'a'
-        var vocabulary = ""
-        for (i in firstPosition until firstPosition + vocabularySize)
-            vocabulary += i.toChar().toString()
-        return vocabulary
     }
 }

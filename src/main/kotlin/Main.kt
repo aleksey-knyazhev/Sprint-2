@@ -1,3 +1,3 @@
 fun main() {
-    ProblemA().main()
+    ProblemB().main()
 }
