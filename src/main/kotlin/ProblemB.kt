@@ -14,7 +14,6 @@ class ProblemB {
 
             for (fullVocabularySetCounter in 1..stringSize / vocabularySize) string += vocabulary // fullVocabularySetCounter - итератор случаев добавления полного словаря
             if (countOfMaxFrequencyLetters != 0) string += vocabulary.substring(0, countOfMaxFrequencyLetters)
-
             println(string)
         }
     }
