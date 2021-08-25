@@ -13,10 +13,7 @@ class ProblemB {
             var string = ""
 
             for (fullVocabularySetCounter in 1..stringSize / vocabularySize) string += vocabulary // fullVocabularySetCounter - итератор случаев добавления полного словаря
-
-            if (countOfMaxFrequencyLetters != 0)
-                for (singleLetterNonVocabularySetCounter in 0 until countOfMaxFrequencyLetters) // singleLetterNonVocabularySetCounter - итератор символов неполной строки
-                    string += vocabulary[singleLetterNonVocabularySetCounter].toString()
+            if (countOfMaxFrequencyLetters != 0) string += vocabulary.substring(0, countOfMaxFrequencyLetters)
 
             println(string)
         }
